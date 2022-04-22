@@ -15,7 +15,7 @@ services:
       - /sys/fs/cgroup/:/host/sys/fs/cgroup:ro
     environment:
       - DD_SITE=datadoghq.com
-      - DD_API_KEY=<SENSITIVE>
+      - DD_API_KEY=<SENSITIVE-DATA>
       - DD_DOGSTATSD_NON_LOCAL_TRAFFIC=1
     ports:
       - "8125:8125/udp"
