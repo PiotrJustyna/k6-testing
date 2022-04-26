@@ -2,16 +2,19 @@ import http from 'k6/http';
 import { check } from 'k6';
 export const options = {
     scenarios: {
-        load_testing: {
+        spike_testing: {
             executor: 'ramping-arrival-rate',
             preAllocatedVUs: 10,
             startRate: 1,
             timeUnit: '1s',
-            maxVUs: 60,
+            maxVUs: 80,
             stages: [
-              { duration: '30s', target: 20 },
-              { duration: '1m', target: 20 },
-              { duration: '30s', target: 0 }
+              { duration: '30s', target: 10 },
+              { duration: '1m', target: 10 },
+              { duration: '30s', target: 20},
+              { duration: '1m', target: 20},
+              { duration: '30s', target: 40},
+              { duration: '1m', target: 40}              
             ]      
         }        
     }
